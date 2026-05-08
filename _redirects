@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects
+# Legacy landing page URL → index
+/Lizia%20Landing.html  /  301
+
+# Catch-all SPA fallback (single page app)
+/*  /index.html  200
