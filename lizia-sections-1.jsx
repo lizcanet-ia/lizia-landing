@@ -53,7 +53,7 @@ function Problema() {
         </div>
         <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, justifyContent: 'center', maxWidth: 700, margin: '0 auto' }}>
           {cards.map((c, i) =>
-          <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 32px)', display: 'flex', flexDirection: 'column', gap: 16, justifyContent: "flex-start", alignItems: "center", borderRadius: "50px", minHeight: 280, width: '100%', maxWidth: 329 }}>
+          <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 32px)', display: 'flex', flexDirection: 'column', gap: 16, justifyContent: 'flex-start', alignItems: 'center', borderRadius: 'clamp(24px, 5vw, 50px)' }}>
               <div className="icon-box" style={{ textAlign: "center", backgroundPosition: "center center" }}>{iconSvgs[i]}</div>
               <h3 style={{ fontWeight: 700, fontSize: 18, textAlign: "center" }}>{c.title}</h3>
               <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 15, lineHeight: 1.6, textAlign: "center" }}>{c.desc}</p>

@@ -128,9 +128,9 @@ function Casos() {
             <span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 55.44px)' }}>Aplica a todo negocio que reciba consultas online</span>
           </h2>
         </div>
-        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, textAlign: 'left', padding: '1px', margin: '60px auto', maxWidth: 900 }}>
+        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, textAlign: 'left', margin: '60px auto', maxWidth: 900 }}>
           {cases.map((c, i) =>
-          <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 32px)', display: 'flex', flexDirection: 'column', gap: 16, textAlign: 'left', alignItems: 'center', justifyContent: 'flex-start', width: '100%', minHeight: 280, borderRadius: '50px' }}>
+          <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 32px)', display: 'flex', flexDirection: 'column', gap: 16, textAlign: 'left', alignItems: 'center', justifyContent: 'flex-start', borderRadius: 'clamp(24px, 5vw, 50px)' }}>
               <div className="icon-box">{c.icon}</div>
               <h3 style={{ fontWeight: 700, fontSize: 17 }}>{c.title}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>

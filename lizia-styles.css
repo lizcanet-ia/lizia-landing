@@ -22,7 +22,11 @@ body {
   color: #fff;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
+
+/* Prevent horizontal overflow on all levels */
+#root { overflow-x: hidden; max-width: 100vw; }
 
 .mono, .font-mono-neural { font-family: 'JetBrains Mono', monospace; }
 
@@ -265,34 +269,86 @@ body {
   background: linear-gradient(90deg, var(--neural-purple), var(--neural-pink));
 }
 
-/* Responsive */
+/* ═══════ RESPONSIVE MOBILE ═══════ */
 @media (max-width: 768px) {
-  .section { padding: 64px 16px; }
+  .section { padding: 56px 16px !important; }
   .hide-mobile { display: none !important; }
 
-  /* Grids → single column */
-  .grid-2col { grid-template-columns: 1fr !important; }
+  /* Force all containers to respect viewport */
+  .container { max-width: 100% !important; padding: 0 !important; overflow: hidden; }
+
+  /* ALL grids → single column */
+  .grid-2col { 
+    grid-template-columns: 1fr !important; 
+    margin: 0 auto !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* ALL glass cards → full width, auto height */
+  .grid-2col > .glass-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
 
   /* Stats → 2 cols */
   .grid-stats-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 16px !important; }
 
   /* Nodes → vertical */
-  .nodes-flow { flex-direction: column !important; align-items: center !important; gap: 24px !important; }
-  .connector-v-mobile { display: block !important; width: 2px; height: 32px; background: linear-gradient(180deg, var(--neural-cyan), var(--neural-purple)); opacity: 0.4; margin: 0 auto; }
+  .nodes-flow { 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    gap: 20px !important;
+    margin: 0 0 48px !important;
+  }
+  .connector-v-mobile { 
+    display: block !important; 
+    width: 2px; height: 28px; 
+    background: linear-gradient(180deg, var(--neural-cyan), var(--neural-purple)); 
+    opacity: 0.4; margin: 0 auto; 
+  }
+
+  /* Section titles — force smaller on mobile */
+  .section h2 { max-width: 100% !important; width: 100% !important; }
+  .section h2 .grad-text,
+  .section h2 .grad-text-cp { 
+    font-size: clamp(1.5rem, 7vw, 2.4rem) !important; 
+    line-height: 1.15 !important;
+  }
 
   /* Remove hover scale on touch */
   .glass-card:hover { transform: none; }
 
   /* Bigger touch targets */
   .diag-option { min-height: 48px; padding: 16px 20px; }
-  .faq-header { min-height: 56px; padding: 18px 20px !important; }
+  .faq-header { min-height: 56px; padding: 16px 16px !important; width: 100% !important; }
+  .faq-item { width: 100% !important; }
+
+  /* FAQ card */
+  .glass-card { max-width: 100% !important; }
 
   /* Footer stack */
   .footer-inner { flex-direction: column !important; text-align: center !important; gap: 12px !important; }
+
+  /* Hero adjustments */
+  #hero { min-height: 90vh !important; }
+  
+  /* Proceso cards */
+  .glass-card { height: auto !important; }
+
+  /* CTA section */
+  .btn-gradient { font-size: 15px !important; padding: 14px 28px !important; }
 }
 
 @media (max-width: 480px) {
-  .section { padding: 48px 14px; }
+  .section { padding: 40px 12px !important; }
+  .section h2 .grad-text,
+  .section h2 .grad-text-cp { 
+    font-size: clamp(1.3rem, 6.5vw, 2rem) !important; 
+  }
 }
 
 /* Scrollbar */

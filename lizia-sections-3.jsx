@@ -14,7 +14,7 @@ function CrmUpsell() {
         </div>
         <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, alignItems: 'stretch', justifyContent: 'center', position: 'relative', maxWidth: 900, margin: '0 auto' }}>
           {/* Card 1 */}
-          <div className="glass-card grad-border-top" style={{ padding: 'clamp(20px, 4vw, 32px)', width: '100%', minHeight: 280 }}>
+          <div className="glass-card grad-border-top" style={{ padding: 'clamp(20px, 4vw, 32px)' }}>
             <h3 style={{ fontWeight: 700, fontSize: 20, marginBottom: 12 }}>Integración con tu CRM</h3>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>Nos conectamos con cualquier CRM que uses.
 Tu catálogo se sincroniza automáticamente.
@@ -34,7 +34,7 @@ Tu catálogo se sincroniza automáticamente.
           </div>
 
           {/* Card 2 */}
-          <div className="glass-card grad-border-top grad-border-top-pink" style={{ padding: 'clamp(20px, 4vw, 32px)', width: '100%', minHeight: 280 }}>
+          <div className="glass-card grad-border-top grad-border-top-pink" style={{ padding: 'clamp(20px, 4vw, 32px)' }}>
             <h3 style={{ fontWeight: 700, fontSize: 20, marginBottom: 12 }}>CRM Lizia</h3>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>Si no tenés CRM, te hosteamos uno propio.
 Cargás tu catálogo, gestionás clientes y tenés todo en un solo lugar.
