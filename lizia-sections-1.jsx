@@ -48,10 +48,10 @@ function Problema() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Problema" />
           <h2 style={{ fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, maxWidth: 700, margin: '0 auto', width: '100%' }}>
-            <span className="grad-text" style={{ fontSize: 'clamp(1.8rem, 6vw, 60.44px)' }}>Si vendés por WhatsApp, probablemente te pase esto</span>
+            <span className="grad-text section-title">Si vendés por WhatsApp, probablemente te pase esto</span>
           </h2>
         </div>
-        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, justifyContent: 'center', maxWidth: 700, margin: '0 auto' }}>
+        <div className="grid-2col" style={{ justifyContent: 'center', maxWidth: 700, margin: '0 auto' }}>
           {cards.map((c, i) =>
           <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 32px)', display: 'flex', flexDirection: 'column', gap: 16, justifyContent: 'flex-start', alignItems: 'center', borderRadius: 'clamp(24px, 5vw, 50px)' }}>
               <div className="icon-box" style={{ textAlign: "center", backgroundPosition: "center center" }}>{iconSvgs[i]}</div>
@@ -129,7 +129,7 @@ function Diagnostico() {
         }}>
           {!showResult ?
           <>
-              <h2 style={{ fontWeight: 800, marginBottom: 8, lineHeight: 1.1, textWrap: 'pretty', textAlign: "center", letterSpacing: '-0.03em' }}><span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 60.44px)' }}>Evaluá cuánto podrías ganar con Lizia</span></h2>
+              <h2 style={{ fontWeight: 800, marginBottom: 8, lineHeight: 1.1, textWrap: 'pretty', textAlign: "center", letterSpacing: '-0.03em' }}><span className="grad-text section-title">Evaluá cuánto podrías ganar con Lizia</span></h2>
               <div className="progress-bar" style={{ margin: '24px 0 32px' }}>
                 <div className="progress-fill" style={{ width: `${(step + 1) / questions.length * 100}%` }}></div>
               </div>

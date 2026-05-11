@@ -20,7 +20,7 @@ function Solucion() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Arquitectura // Solución" />
           <h2 style={{ fontWeight: 800, letterSpacing: '-0.03em', maxWidth: 700, margin: '0 auto', width: '100%' }}>
-            <span className="grad-text" style={{ lineHeight: "1.1", textAlign: "center", opacity: "1", fontWeight: "800", fontSize: 'clamp(1.8rem, 6vw, 60.44px)' }}>Así funciona Lizia</span>
+            <span className="grad-text section-title" style={{ lineHeight: '1.1', textAlign: 'center' }}>Así funciona Lizia</span>
           </h2>
         </div>
 
@@ -76,7 +76,7 @@ function Solucion() {
           borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)',
           padding: '40px 24px', borderRadius: 20, marginBottom: 48
         }}>
-          <div className="grid-stats-4" style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, textAlign: 'center' }}>
+          <div className="grid-stats-4" style={{ maxWidth: 1000, margin: '0 auto' }}>
             {[
             { value: '3s', label: 'Tiempo de respuesta' },
             { value: '24/7', label: 'Disponibilidad' },
@@ -125,10 +125,10 @@ function Casos() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Casos de uso" />
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            <span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 55.44px)' }}>Aplica a todo negocio que reciba consultas online</span>
+            <span className="grad-text section-title">Aplica a todo negocio que reciba consultas online</span>
           </h2>
         </div>
-        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, textAlign: 'left', margin: '60px auto', maxWidth: 900 }}>
+        <div className="grid-2col" style={{ textAlign: 'left', margin: '60px auto', maxWidth: 900 }}>
           {cases.map((c, i) =>
           <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 32px)', display: 'flex', flexDirection: 'column', gap: 16, textAlign: 'left', alignItems: 'center', justifyContent: 'flex-start', borderRadius: 'clamp(24px, 5vw, 50px)' }}>
               <div className="icon-box">{c.icon}</div>
@@ -166,7 +166,7 @@ function Proceso() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Implementación" />
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            <span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 55.44px)' }}>Empezar es más simple de lo que parece</span>
+            <span className="grad-text section-title">Empezar es más simple de lo que parece</span>
           </h2>
         </div>
         <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'flex-start' }}>
