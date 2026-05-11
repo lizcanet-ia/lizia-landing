@@ -9,12 +9,12 @@ function CrmUpsell() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Integraciones" />
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            <span className="grad-text" style={{ fontSize: "55.44px" }}>Lizia se conecta a tus herramientas.</span>
+            <span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 55.44px)' }}>Lizia se conecta a tus herramientas.</span>
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, auto)', gap: 24, alignItems: 'stretch', justifyContent: 'center', position: 'relative' }}>
+        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, alignItems: 'stretch', justifyContent: 'center', position: 'relative', maxWidth: 900, margin: '0 auto' }}>
           {/* Card 1 */}
-          <div className="glass-card grad-border-top" style={{ padding: 32, width: 429.2, height: "329.2px" }}>
+          <div className="glass-card grad-border-top" style={{ padding: 'clamp(20px, 4vw, 32px)', width: '100%', minHeight: 280 }}>
             <h3 style={{ fontWeight: 700, fontSize: 20, marginBottom: 12 }}>Integración con tu CRM</h3>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>Nos conectamos con cualquier CRM que uses.
 Tu catálogo se sincroniza automáticamente.
@@ -34,7 +34,7 @@ Tu catálogo se sincroniza automáticamente.
           </div>
 
           {/* Card 2 */}
-          <div className="glass-card grad-border-top grad-border-top-pink" style={{ padding: 32, width: 429.2, height: "329.2px" }}>
+          <div className="glass-card grad-border-top grad-border-top-pink" style={{ padding: 'clamp(20px, 4vw, 32px)', width: '100%', minHeight: 280 }}>
             <h3 style={{ fontWeight: 700, fontSize: 20, marginBottom: 12 }}>CRM Lizia</h3>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>Si no tenés CRM, te hosteamos uno propio.
 Cargás tu catálogo, gestionás clientes y tenés todo en un solo lugar.
@@ -75,14 +75,14 @@ function FAQ() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Preguntas frecuentes" />
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            <span className="grad-text" style={{ fontSize: "55.44px" }}>¿Tenés dudas?
+            <span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 55.44px)' }}>¿Tenés dudas?
 Selecciona algunas de ellas.</span>
           </h2>
         </div>
-        <div className="glass-card" style={{ maxWidth: 750, margin: '0 auto', padding: '32px 36px', display: 'flex', flexDirection: 'column', gap: 12, height: "550px" }}>
+        <div className="glass-card" style={{ maxWidth: 750, margin: '0 auto', padding: 'clamp(16px, 4vw, 36px)', display: 'flex', flexDirection: 'column', gap: 12, minHeight: 400 }}>
           {items.map((it, i) => <div key={i} className={`faq-item ${open === i ? 'open' : ''}`}
-          style={{ ...(open === i ? { background: 'rgba(255,255,255,0.02)' } : {}), textAlign: "center", borderWidth: "0.8px", width: "676.4px" }}>
-              <div className="faq-header" onClick={() => setOpen(open === i ? null : i)} style={{ alignItems: "center", padding: "22px 28px", justifyContent: "center", width: "698.4px" }}>
+          style={{ ...(open === i ? { background: 'rgba(255,255,255,0.02)' } : {}), textAlign: "center", borderWidth: "0.8px", width: '100%' }}>
+              <div className="faq-header" onClick={() => setOpen(open === i ? null : i)} style={{ alignItems: "center", padding: '18px clamp(14px, 3vw, 28px)', justifyContent: "center", width: '100%' }}>
                 <span style={{ fontWeight: 600, fontSize: 16 }}>{it.q}</span>
                 <span style={{ fontSize: 20, transition: 'transform 0.3s', transform: open === i ? 'rotate(45deg)' : 'rotate(0)', color: "rgb(252, 252, 252)", textAlign: "justify" }}>+</span>
               </div>
@@ -108,7 +108,7 @@ function CtaFinal() {
           </span>
         </div>
         <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 24 }}>
-          <span className="grad-text" style={{ fontSize: "60.44px" }}>¿Listo para que tu negocio venda mientras dormís?</span>
+          <span className="grad-text" style={{ fontSize: 'clamp(1.8rem, 6vw, 60.44px)' }}>¿Listo para que tu negocio venda mientras dormís?</span>
         </h2>
         <p style={{ marginBottom: 40, lineHeight: 1.6, color: "rgb(255, 255, 255)", fontSize: "19px", fontWeight: "400" }}>
           La tecnología ya está lista. Solo falta tu decisión para ganar más ventas.
@@ -126,7 +126,7 @@ function CtaFinal() {
 function Footer() {
   return (
     <footer style={{ background: 'rgba(10,10,26,0.5)', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '32px 24px' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
+      <div className="footer-inner" style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontWeight: 800, fontSize: 18, color: '#fff' }}>Lizia</span>
           <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'linear-gradient(135deg, var(--neural-cyan), var(--neural-purple))', display: 'inline-block' }}></span>

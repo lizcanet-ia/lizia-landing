@@ -14,7 +14,7 @@
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: 'Inter Tight', sans-serif;
@@ -267,8 +267,32 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .section { padding: 80px 16px; }
+  .section { padding: 64px 16px; }
   .hide-mobile { display: none !important; }
+
+  /* Grids → single column */
+  .grid-2col { grid-template-columns: 1fr !important; }
+
+  /* Stats → 2 cols */
+  .grid-stats-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 16px !important; }
+
+  /* Nodes → vertical */
+  .nodes-flow { flex-direction: column !important; align-items: center !important; gap: 24px !important; }
+  .connector-v-mobile { display: block !important; width: 2px; height: 32px; background: linear-gradient(180deg, var(--neural-cyan), var(--neural-purple)); opacity: 0.4; margin: 0 auto; }
+
+  /* Remove hover scale on touch */
+  .glass-card:hover { transform: none; }
+
+  /* Bigger touch targets */
+  .diag-option { min-height: 48px; padding: 16px 20px; }
+  .faq-header { min-height: 56px; padding: 18px 20px !important; }
+
+  /* Footer stack */
+  .footer-inner { flex-direction: column !important; text-align: center !important; gap: 12px !important; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 48px 14px; }
 }
 
 /* Scrollbar */

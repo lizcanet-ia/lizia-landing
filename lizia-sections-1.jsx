@@ -29,7 +29,7 @@ function SectionLabel({ text }) {
 function Problema() {
   const ref = useReveal();
   const cards = [
-  { icon: '📥', title: 'Mensajes sin responder acumulados.', desc: 'Entrás al WhatsApp del negocio y ya hay 30 mensajes sin leer. \nEntre consultas de stock, precios y envíos, no das abasto.' },
+  { icon: '📥', title: 'Mensajes acumulados sin responder.', desc: 'Entrás al WhatsApp del negocio y ya hay 30 mensajes sin leer. \nEntre consultas de stock, precios y envíos, no das abasto.' },
   { icon: '🔄', title: 'Siempre las mismas preguntas', desc: 'El 70% de las consultas son repetitivas.\n"¿Hacen envíos al interior?" \n"¿Aceptan Mercado Pago?" \n"¿Tienen talle M?" ' },
   { icon: '💸', title: 'Ventas que perdés fuera de horario', desc: 'El cliente preguntó a las 23hs. \nNadie respondió. A la mañana ya compró en otro lado.' },
   { icon: '👤', title: 'Todo depende de personas respondiendo', desc: 'Si la persona que maneja el WhatsApp no está disponible los mensajes quedan sin responder y las VENTAS SE FRENAN.' }];
@@ -47,13 +47,13 @@ function Problema() {
       <div className="container reveal" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Problema" />
-          <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, maxWidth: 700, margin: '0 auto', width: "700px" }}>
-            <span className="grad-text" style={{ fontSize: "60.44px" }}>Si vendés por WhatsApp, probablemente te pase esto</span>
+          <h2 style={{ fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, maxWidth: 700, margin: '0 auto', width: '100%' }}>
+            <span className="grad-text" style={{ fontSize: 'clamp(1.8rem, 6vw, 60.44px)' }}>Si vendés por WhatsApp, probablemente te pase esto</span>
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, auto)', gap: 24, justifyContent: 'center' }}>
+        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, justifyContent: 'center', maxWidth: 700, margin: '0 auto' }}>
           {cards.map((c, i) =>
-          <div key={i} className="glass-card" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16, justifyContent: "flex-start", alignItems: "center", borderRadius: "50px", height: "329.2px", width: "329.2px" }}>
+          <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 32px)', display: 'flex', flexDirection: 'column', gap: 16, justifyContent: "flex-start", alignItems: "center", borderRadius: "50px", minHeight: 280, width: '100%', maxWidth: 329 }}>
               <div className="icon-box" style={{ textAlign: "center", backgroundPosition: "center center" }}>{iconSvgs[i]}</div>
               <h3 style={{ fontWeight: 700, fontSize: 18, textAlign: "center" }}>{c.title}</h3>
               <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 15, lineHeight: 1.6, textAlign: "center" }}>{c.desc}</p>
@@ -129,7 +129,7 @@ function Diagnostico() {
         }}>
           {!showResult ?
           <>
-              <h2 style={{ fontWeight: 800, marginBottom: 8, lineHeight: 1.1, textWrap: 'pretty', textAlign: "center", letterSpacing: '-0.03em' }}><span className="grad-text" style={{ fontSize: "60.44px" }}>Evaluá cuánto podrías ganar con Lizia</span></h2>
+              <h2 style={{ fontWeight: 800, marginBottom: 8, lineHeight: 1.1, textWrap: 'pretty', textAlign: "center", letterSpacing: '-0.03em' }}><span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 60.44px)' }}>Evaluá cuánto podrías ganar con Lizia</span></h2>
               <div className="progress-bar" style={{ margin: '24px 0 32px' }}>
                 <div className="progress-fill" style={{ width: `${(step + 1) / questions.length * 100}%` }}></div>
               </div>

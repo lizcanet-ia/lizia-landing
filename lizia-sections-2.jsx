@@ -19,13 +19,13 @@ function Solucion() {
       <div className="container reveal" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Arquitectura // Solución" />
-          <h2 style={{ fontWeight: 800, letterSpacing: '-0.03em', maxWidth: 700, margin: '0 auto', width: "1200px", height: "55.2px", fontSize: "60.44px" }}>
-            <span className="grad-text" style={{ lineHeight: "1.1", textAlign: "center", opacity: "1", borderStyle: "solid", borderWidth: "0px", borderRadius: "8px", padding: "10px", margin: "0px", fontWeight: "800", fontSize: "60.44px" }}>Así funciona Lizia</span>
+          <h2 style={{ fontWeight: 800, letterSpacing: '-0.03em', maxWidth: 700, margin: '0 auto', width: '100%' }}>
+            <span className="grad-text" style={{ lineHeight: "1.1", textAlign: "center", opacity: "1", fontWeight: "800", fontSize: 'clamp(1.8rem, 6vw, 60.44px)' }}>Así funciona Lizia</span>
           </h2>
         </div>
 
         {/* Nodes flow */}
-        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', marginBottom: 48, flexFlow: "wrap", gap: "0px", margin: "0px 0px 78px", justifyContent: "flex-start" }}>
+        <div className="nodes-flow" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', marginBottom: 48, gap: 0, margin: '0px 0px 78px', justifyContent: 'center' }}>
           {nodes.map((n, i) =>
           <React.Fragment key={i}>
               <div onClick={() => setExpanded(expanded === i ? null : i)}
@@ -44,7 +44,7 @@ function Solucion() {
                 <p style={{ fontSize: 13, lineHeight: 1.4, color: "rgb(250, 250, 250)", fontWeight: "600" }}>{n.label}</p>
               </div>
               {i < 2 && <div className="connector hide-mobile" style={{ height: 3, opacity: 0.8, minWidth: 50, background: 'linear-gradient(90deg, var(--neural-cyan), var(--neural-purple), var(--neural-pink))', boxShadow: '0 0 12px rgba(34,211,238,0.4)' }}></div>}
-              {i < 2 && <div className="connector-v" style={{ display: 'none' }}></div>}
+              {i < 2 && <div className="connector-v-mobile" style={{ display: 'none' }}></div>}
             </React.Fragment>
           )}
         </div>
@@ -59,7 +59,7 @@ function Solucion() {
 
 
         {/* Capabilities */}
-        <div className="glass-card" style={{ maxWidth: 600, margin: '0 auto 48px', padding: 32, width: "500px" }}>
+        <div className="glass-card" style={{ maxWidth: 600, margin: '0 auto 48px', padding: 'clamp(20px, 4vw, 32px)', width: '100%' }}>
           <h3 style={{ marginBottom: 20, textAlign: "center", fontWeight: "500", fontSize: "0px", lineHeight: "0", width: "0px", opacity: "0" }}>LO QUE HACE POR TU NEGOCIO</h3>
           {['Responde preguntas de stock y precios', 'Recomienda productos del catálogo', 'Envía medios de pago', 'Gestiona consultas de envío (AMBA e interior)', 'Organiza pedidos y los escala a tu equipo'].map((c, i) =>
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontWeight: "700", fontSize: "18px" }}>
@@ -76,7 +76,7 @@ function Solucion() {
           borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)',
           padding: '40px 24px', borderRadius: 20, marginBottom: 48
         }}>
-          <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, textAlign: 'center' }}>
+          <div className="grid-stats-4" style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, textAlign: 'center' }}>
             {[
             { value: '3s', label: 'Tiempo de respuesta' },
             { value: '24/7', label: 'Disponibilidad' },
@@ -125,12 +125,12 @@ function Casos() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Casos de uso" />
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            <span className="grad-text" style={{ fontSize: "55.44px" }}>Aplica a todo negocio que reciba consultas online</span>
+            <span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 55.44px)' }}>Aplica a todo negocio que reciba consultas online</span>
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, textAlign: "left", padding: "1px", margin: "60px 0px 60px 95px" }}>
+        <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, textAlign: 'left', padding: '1px', margin: '60px auto', maxWidth: 900 }}>
           {cases.map((c, i) =>
-          <div key={i} className="glass-card" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16, textAlign: "left", alignItems: "center", justifyContent: "flex-start", width: 429.2, height: 329.2, borderRadius: "50px" }}>
+          <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 32px)', display: 'flex', flexDirection: 'column', gap: 16, textAlign: 'left', alignItems: 'center', justifyContent: 'flex-start', width: '100%', minHeight: 280, borderRadius: '50px' }}>
               <div className="icon-box">{c.icon}</div>
               <h3 style={{ fontWeight: 700, fontSize: 17 }}>{c.title}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -166,7 +166,7 @@ function Proceso() {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Implementación" />
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
-            <span className="grad-text" style={{ fontSize: "55.44px" }}>Empezar es más simple de lo que parece</span>
+            <span className="grad-text" style={{ fontSize: 'clamp(1.6rem, 5.5vw, 55.44px)' }}>Empezar es más simple de lo que parece</span>
           </h2>
         </div>
         <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'flex-start' }}>
@@ -180,7 +180,7 @@ function Proceso() {
                 fontWeight: 800, fontSize: 20, color: 'var(--neural-base)',
                 boxShadow: '0 0 24px var(--glow-cyan)'
               }}>{s.n}</div>
-                <div className="glass-card" style={{ padding: 28, width: '100%', height: "183.2px" }}>
+                <div className="glass-card" style={{ padding: 'clamp(20px, 4vw, 28px)', width: '100%', minHeight: 183 }}>
                   <h3 style={{ fontWeight: 700, fontSize: 17, marginBottom: 12, color: "rgb(190, 141, 241)" }}>{s.title}</h3>
                   <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgb(252, 252, 252)" }}>{s.desc}</p>
                 </div>
