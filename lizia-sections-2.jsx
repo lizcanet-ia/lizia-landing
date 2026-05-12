@@ -19,7 +19,7 @@ function Solucion() {
       <div className="container reveal" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Arquitectura // Solución" />
-          <h2 style={{ fontWeight: 800, letterSpacing: '-0.03em', maxWidth: 700, margin: '0 auto', width: '100%' }}>
+          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em', maxWidth: 700, margin: '0 auto', width: '100%' }}>
             <span className="grad-text section-title" style={{ lineHeight: '1.1', textAlign: 'center' }}>Así funciona Lizia</span>
           </h2>
         </div>
@@ -126,7 +126,7 @@ function Casos() {
       <div className="container reveal" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Casos de uso" />
-          <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
+          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
             <span className="grad-text section-title">Aplica a todo negocio que reciba consultas online</span>
           </h2>
         </div>
@@ -167,7 +167,7 @@ function Proceso() {
       <div className="container reveal" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Implementación" />
-          <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
+          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
             <span className="grad-text section-title">Empezar es más simple de lo que parece</span>
           </h2>
         </div>

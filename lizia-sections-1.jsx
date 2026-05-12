@@ -47,7 +47,7 @@ function Problema() {
       <div className="container reveal" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Problema" />
-          <h2 style={{ fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, maxWidth: 700, margin: '0 auto', width: '100%' }}>
+          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, maxWidth: 700, margin: '0 auto', width: '100%' }}>
             <span className="grad-text section-title">Si vendés por WhatsApp, probablemente te pase esto</span>
           </h2>
         </div>
@@ -129,7 +129,7 @@ function Diagnostico() {
         }}>
           {!showResult ?
           <>
-              <h2 style={{ fontWeight: 800, marginBottom: 8, lineHeight: 1.1, textWrap: 'pretty', textAlign: "center", letterSpacing: '-0.03em' }}><span className="grad-text section-title">Evaluá cuánto podrías ganar con Lizia</span></h2>
+              <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3rem)', fontWeight: 800, marginBottom: 8, lineHeight: 1.1, textWrap: 'pretty', textAlign: "center", letterSpacing: '-0.03em' }}><span className="grad-text section-title">Evaluá cuánto podrías ganar con Lizia</span></h2>
               <div className="progress-bar" style={{ margin: '24px 0 32px' }}>
                 <div className="progress-fill" style={{ width: `${(step + 1) / questions.length * 100}%` }}></div>
               </div>
