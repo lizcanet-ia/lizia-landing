@@ -97,7 +97,7 @@ function LogoCloud() {
   return (
     <div className="logo-cloud-section">
       <div className="logo-cloud-inner">
-        <p className="logo-cloud-label hide-mobile">INTEGRAMOS CON TUS HERRAMIENTAS</p>
+        <p className="logo-cloud-label">INTEGRAMOS CON TUS HERRAMIENTAS</p>
         <div className="logo-cloud-divider hide-mobile"></div>
         <div className="logo-cloud-slider-mask">
           <div className="slider-track">
