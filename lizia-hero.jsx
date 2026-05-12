@@ -90,7 +90,7 @@ function LogoCloud() {
 
 
   const LogoItem = ({ item }) =>
-  <div style={{
+  <div className="logo-item" style={{
     display: 'flex', alignItems: 'center', gap: 10,
     padding: '12px 22px', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 16,
     background: 'rgba(20,20,48,0.75)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', whiteSpace: 'nowrap',
@@ -111,12 +111,12 @@ function LogoCloud() {
       borderBottom: '1px solid rgba(255,255,255,0.06)',
       padding: '32px 0', overflow: 'hidden', position: 'relative', zIndex: 20
     }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 40 }}>
+      <div className="logo-cloud-inner" style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center' }}>
         <p className="hide-mobile" style={{ minWidth: 200, lineHeight: 1.5, color: 'rgba(255,255,255,0.85)', fontSize: 15, fontWeight: 500 }}>INTEGRAMOS CON TUS HERRAMIENTAS
 
         </p>
         <div className="hide-mobile" style={{ width: 1, height: 40, background: 'rgba(255,255,255,0.1)', flexShrink: 0 }}></div>
-        <div style={{ flex: 1, maxWidth: '85%', overflow: 'hidden', maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)', WebkitMaskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
+        <div style={{ flex: 1, maxWidth: '100%', overflow: 'hidden', maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)', WebkitMaskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
           <div className="slider-track">
             {[...logoData, ...logoData].map((item, i) => <LogoItem key={i} item={item} />)}
           </div>

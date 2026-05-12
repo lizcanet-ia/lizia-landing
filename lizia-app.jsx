@@ -27,7 +27,7 @@ function VideoBackground() {
           width: '100%', height: '100%', objectFit: 'cover',
           opacity: isMobile ? 0.35 : 0.5,
         }}
-        src="Image 1 — Hero Background V2.mp4"></video>
+        src="uploads/Image 1 - Hero Background_v2.mp4"></video>
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 20%, var(--neural-base) 70%)' }}></div>
     </div>
   );

@@ -165,6 +165,14 @@ body {
   transform: translateY(0);
 }
 
+/* Logo cloud */
+.logo-cloud-inner {
+  gap: 40px;
+}
+.logo-item {
+  flex-shrink: 0;
+}
+
 /* Infinite slider */
 @keyframes slide {
   0% { transform: translateX(0); }
@@ -332,6 +340,22 @@ body {
   /* Glass cards full width */
   .glass-card { max-width: 100%; height: auto; }
 
+  /* Logo cloud mobile */
+  .logo-cloud-inner {
+    gap: 0 !important;
+    padding: 0 12px !important;
+  }
+  .slider-track {
+    gap: 20px !important;
+  }
+  .logo-item {
+    padding: 10px 14px !important;
+    border-radius: 12px !important;
+  }
+  .logo-item span {
+    font-size: 12px !important;
+  }
+
   /* Footer stack */
   .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
 
@@ -342,6 +366,12 @@ body {
 @media (max-width: 480px) {
   .section { padding: 40px 12px; }
   .section-title { font-size: clamp(1.1rem, 5.5vw, 1.6rem) !important; }
+  .slider-track {
+    gap: 14px !important;
+  }
+  .logo-item {
+    padding: 8px 12px !important;
+  }
 }
 
 /* Scrollbar */
