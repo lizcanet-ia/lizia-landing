@@ -101,7 +101,7 @@ function LogoCloud() {
         <div className="logo-cloud-divider hide-mobile"></div>
         <div className="logo-cloud-slider-mask">
           <div className="slider-track">
-            {[...logoData, ...logoData].map((item, i) => <LogoItem key={i} item={item} />)}
+            {[...logoData, ...logoData, ...logoData].map((item, i) => <LogoItem key={i} item={item} />)}
           </div>
         </div>
       </div>
