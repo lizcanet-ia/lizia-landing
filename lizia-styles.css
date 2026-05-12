@@ -14,7 +14,12 @@
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+  scroll-snap-type: y proximity;
+}
 
 body {
   font-family: 'Inter Tight', sans-serif;
@@ -64,6 +69,24 @@ body {
   border: 1px solid rgba(255,255,255,0.07);
   border-radius: 20px;
   transition: border-color 0.5s, box-shadow 0.5s, transform 0.5s;
+}
+
+/* Staggered card entrance inside visible reveal containers */
+.reveal.visible .glass-card { animation: cardReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal.visible .glass-card:nth-child(1) { animation-delay: 0s; }
+.reveal.visible .glass-card:nth-child(2) { animation-delay: 0.12s; }
+.reveal.visible .glass-card:nth-child(3) { animation-delay: 0.24s; }
+.reveal.visible .glass-card:nth-child(4) { animation-delay: 0.36s; }
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: perspective(800px) rotateX(4deg) translateY(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(800px) rotateX(0deg) translateY(0) scale(1);
+  }
 }
 .glass-card:hover {
   border-color: rgba(34,211,238,0.2);
@@ -130,8 +153,12 @@ body {
   flex-shrink: 0;
 }
 
-/* Section spacing */
-.section { padding: 96px 24px; position: relative; }
+/* Section spacing + page-turn snap */
+.section {
+  padding: 96px 24px;
+  position: relative;
+  scroll-snap-align: start;
+}
 .container { max-width: 1280px; margin: 0 auto; }
 
 /* Grid 2-column layout */
@@ -141,15 +168,17 @@ body {
   gap: 24px;
 }
 
-/* Scroll animation */
+/* Scroll animation — page-turn reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: perspective(1200px) rotateX(3deg) translateY(60px);
+  transform-origin: center bottom;
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: perspective(1200px) rotateX(0deg) translateY(0);
 }
 
 /* Infinite slider */
@@ -168,6 +197,7 @@ body {
   overflow: hidden;
   position: relative;
   z-index: 20;
+  scroll-snap-align: start;
 }
 
 /* Logo Cloud — inner container */
