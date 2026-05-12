@@ -72,20 +72,22 @@ function Solucion() {
 
         {/* Stats bar */}
         <div style={{
-          background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)',
-          borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)',
-          padding: '40px 24px', borderRadius: 20, marginBottom: 48
+          padding: '48px 24px', marginBottom: 48
         }}>
-          <div className="grid-stats-4" style={{ maxWidth: 1000, margin: '0 auto' }}>
+          <div style={{
+            maxWidth: 800, margin: '0 auto',
+            display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px 24px',
+            textAlign: 'center'
+          }} className="grid-stats-4">
             {[
             { value: '3s', label: 'Tiempo de respuesta' },
             { value: '24/7', label: 'Disponibilidad' },
             { value: '98%', label: 'Tasa de resolución' },
-            { value: '+500', label: 'Conversaciones mensuales' }].
+            { value: '+500', label: 'Conversaciones resueltas' }].
             map((s, i) =>
-            <div key={i}>
-                <div className="grad-text-cp" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>{s.value}</div>
-                <div className="mono" style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', marginTop: 8, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{s.label}</div>
+            <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+                <div className="grad-text-cp" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1 }}>{s.value}</div>
+                <div className="mono" style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', marginTop: 6, letterSpacing: '0.08em', textTransform: 'uppercase' }}>{s.label}</div>
               </div>
             )}
           </div>

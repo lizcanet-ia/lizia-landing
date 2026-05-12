@@ -130,8 +130,8 @@ body {
   flex-shrink: 0;
 }
 
-/* Section spacing — matches Hero → Slider gap */
-.section { padding: 64px 24px; position: relative; }
+/* Section spacing */
+.section { padding: 96px 24px; position: relative; }
 .container { max-width: 1280px; margin: 0 auto; }
 
 /* Grid 2-column layout */
@@ -358,7 +358,7 @@ body {
 
 /* ═══════ RESPONSIVE MOBILE ═══════ */
 @media (max-width: 768px) {
-  .section { padding: 48px 16px !important; }
+  .section { padding: 64px 16px !important; }
   .hide-mobile { display: none !important; }
 
   /* Force all containers to respect viewport */
@@ -388,7 +388,7 @@ body {
   }
 
   /* Stats → 2 cols */
-  .grid-stats-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 16px !important; }
+  .grid-stats-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 32px 24px !important; text-align: center !important; }
 
   /* Nodes → vertical */
   .nodes-flow { 
@@ -473,7 +473,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .section { padding: 40px 14px !important; }
+  .section { padding: 56px 14px !important; }
   .section h2 .grad-text,
   .section h2 .grad-text-cp { 
     font-size: clamp(1.3rem, 6.5vw, 2rem) !important; 
