@@ -8,7 +8,7 @@ function CrmUpsell() {
       <div className="container reveal" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Integraciones" />
-          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
+          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
             <span className="grad-text section-title">Lizia se conecta a tus herramientas.</span>
           </h2>
         </div>
@@ -74,7 +74,7 @@ function FAQ() {
       <div className="container reveal" ref={ref}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <SectionLabel text="Preguntas frecuentes" />
-          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
+          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
             <span className="grad-text section-title">¿Tenés dudas?
 Selecciona algunas de ellas.</span>
           </h2>
@@ -107,7 +107,7 @@ function CtaFinal() {
           <span style={{ color: "rgb(255, 255, 255)", opacity: "2", fontFamily: "\"Inter Tight\"", fontWeight: "600", fontSize: "18px" }}>Asistente virtual Lizia.
           </span>
         </div>
-        <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 24 }}>
+        <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 24 }}>
           <span className="grad-text section-title">¿Listo para que tu negocio venda mientras dormís?</span>
         </h2>
         <p style={{ marginBottom: 40, lineHeight: 1.6, color: "rgb(255, 255, 255)", fontSize: "19px", fontWeight: "400" }}>
