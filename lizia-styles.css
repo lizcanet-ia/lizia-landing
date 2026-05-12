@@ -130,26 +130,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Section title — responsive font size controlled by CSS, NOT inline */
-.section-title {
-  font-size: clamp(1.8rem, 6vw, 3.5rem);
-  line-height: 1.1;
-  font-weight: 800;
-}
-
-/* Grid layouts — controlled by CSS so media queries can override */
-.grid-2col {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-.grid-stats-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  text-align: center;
-}
-
 /* Section spacing */
 .section { padding: 120px 24px; position: relative; }
 .container { max-width: 1280px; margin: 0 auto; }
@@ -165,26 +145,97 @@ body {
   transform: translateY(0);
 }
 
-/* Logo cloud */
-.logo-cloud-inner {
-  gap: 40px;
-}
-.logo-item {
-  flex-shrink: 0;
-}
-
 /* Infinite slider */
 @keyframes slide {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Logo Cloud — section wrapper */
+.logo-cloud-section {
+  background: rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 32px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 20;
+}
+
+/* Logo Cloud — inner container */
+.logo-cloud-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Logo Cloud — label text */
+.logo-cloud-label {
+  min-width: 200px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Logo Cloud — vertical divider */
+.logo-cloud-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* Logo Cloud — slider mask (fade edges) */
+.logo-cloud-slider-mask {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+}
+
+/* Slider track */
 .slider-track {
   display: flex;
-  gap: 60px;
+  gap: 20px;
   align-items: center;
-  animation: slide 20s linear infinite;
+  animation: slide 25s linear infinite;
   width: max-content;
 }
+
+/* Logo item pill */
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  background: rgba(20,20,48,0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+.logo-item:hover {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(34,211,238,0.3);
+}
+
+/* Logo item text */
+.logo-item-name {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
 .slider-track span {
   opacity: 0.45;
   transition: opacity 0.3s;
@@ -299,21 +350,31 @@ body {
 
 /* ═══════ RESPONSIVE MOBILE ═══════ */
 @media (max-width: 768px) {
-  .section { padding: 56px 16px; }
+  .section { padding: 56px 16px !important; }
   .hide-mobile { display: none !important; }
 
-  /* Containers */
-  .container { max-width: 100%; padding: 0 16px; overflow: hidden; }
+  /* Force all containers to respect viewport */
+  .container { max-width: 100% !important; padding: 0 16px !important; overflow: hidden; }
 
-  /* Section titles — CSS class controls size, no inline to fight */
-  .section-title { font-size: clamp(1.3rem, 6vw, 2rem) !important; }
+  /* ALL grids → single column */
+  .grid-2col { 
+    grid-template-columns: 1fr !important; 
+    margin: 0 auto !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 
-  /* Grids → single column */
-  .grid-2col { grid-template-columns: 1fr; }
-  .grid-2col > .glass-card { width: 100%; max-width: 100%; height: auto; min-height: auto; }
+  /* ALL glass cards → full width, auto height */
+  .grid-2col > .glass-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
 
   /* Stats → 2 cols */
-  .grid-stats-4 { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+  .grid-stats-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 16px !important; }
 
   /* Nodes → vertical */
   .nodes-flow { 
@@ -329,48 +390,79 @@ body {
     opacity: 0.4; margin: 0 auto; 
   }
 
+  /* Section titles — force smaller on mobile */
+  .section h2 { max-width: 100% !important; width: 100% !important; }
+  .section h2 .grad-text,
+  .section h2 .grad-text-cp { 
+    font-size: clamp(1.5rem, 7vw, 2.4rem) !important; 
+    line-height: 1.15 !important;
+  }
+
   /* Remove hover scale on touch */
   .glass-card:hover { transform: none; }
 
   /* Bigger touch targets */
   .diag-option { min-height: 48px; padding: 16px 20px; }
-  .faq-header { min-height: 56px; padding: 16px 16px; justify-content: space-between !important; }
-  .faq-item { width: 100%; }
+  .faq-header { min-height: 56px; padding: 16px 16px !important; width: 100% !important; }
+  .faq-item { width: 100% !important; }
 
-  /* Glass cards full width */
-  .glass-card { max-width: 100%; height: auto; }
-
-  /* Logo cloud mobile */
-  .logo-cloud-inner {
-    gap: 0 !important;
-    padding: 0 12px !important;
-  }
-  .slider-track {
-    gap: 20px !important;
-  }
-  .logo-item {
-    padding: 10px 14px !important;
-    border-radius: 12px !important;
-  }
-  .logo-item span {
-    font-size: 12px !important;
-  }
+  /* FAQ card */
+  .glass-card { max-width: 100% !important; }
 
   /* Footer stack */
-  .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+  .footer-inner { flex-direction: column !important; text-align: center !important; gap: 12px !important; }
 
-  /* CTA */
-  .btn-gradient { font-size: 15px; padding: 14px 28px; }
+  /* Hero adjustments */
+  #hero { min-height: 90vh !important; }
+  
+  /* Proceso cards */
+  .glass-card { height: auto !important; }
+
+  /* CTA section */
+  .btn-gradient { font-size: 15px !important; padding: 14px 28px !important; }
+
+  /* ═══ LOGO CLOUD SLIDER — MOBILE FIX ═══ */
+  .logo-cloud-section {
+    padding: 20px 0;
+  }
+  .logo-cloud-inner {
+    gap: 0;
+    padding: 0;
+  }
+  .logo-cloud-slider-mask {
+    max-width: 100%;
+    width: 100%;
+    mask-image: linear-gradient(90deg, transparent, black 3%, black 97%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 3%, black 97%, transparent);
+  }
+  .slider-track {
+    gap: 12px;
+  }
+  .logo-item {
+    padding: 10px 14px;
+    border-radius: 12px;
+    gap: 8px;
+  }
+  .logo-item-name {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) {
-  .section { padding: 40px 12px; }
-  .section-title { font-size: clamp(1.1rem, 5.5vw, 1.6rem) !important; }
+  .section { padding: 40px 12px !important; }
+  .section h2 .grad-text,
+  .section h2 .grad-text-cp { 
+    font-size: clamp(1.3rem, 6.5vw, 2rem) !important; 
+  }
   .slider-track {
-    gap: 14px !important;
+    gap: 10px;
   }
   .logo-item {
-    padding: 8px 12px !important;
+    padding: 8px 10px;
+    gap: 6px;
+  }
+  .logo-item-name {
+    font-size: 11px;
   }
 }
 
