@@ -6,12 +6,16 @@ function Solucion() {
   const [expanded, setExpanded] = useState(null);
 
   const nodes = [
-  { color: 'var(--neural-cyan)', label: 'El cliente escribe por WhatsApp', icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>,
+  { color: 'var(--neural-cyan)', label: 'El cliente escribe por WhatsApp', icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor" stroke="none"/></svg>,
     desc: 'Captura automática desde WhatsApp Business. El cliente manda "tienen la remera negra en L?" y el sistema lo procesa al instante.' },
-  { color: 'var(--neural-purple)', label: 'Lizia interpreta y busca en tu catálogo', icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 2a8 8 0 018 8c0 3.4-2.1 6.4-5 7.6V22h-6v-4.4C6.1 16.4 4 13.4 4 10a8 8 0 018-8z" /></svg>,
+  { color: 'var(--neural-purple)', label: 'Lizia interpreta y busca en tu catálogo', icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 2a8 8 0 018 8c0 3.4-2.1 6.4-5 7.6V22h-6v-4.4C6.1 16.4 4 13.4 4 10a8 8 0 018-8z" /><path d="M10 17h4" /></svg>,
     desc: 'Cruza la consulta con tu catálogo, stock en tiempo real y reglas de negocio. Sabe qué recomendar, qué hay disponible y cuánto sale con envío.' },
   { color: 'var(--neural-pink)', label: 'Responde con precio, stock y medios de pago', icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>,
-    desc: 'Responde en segundos con la info correcta. Si el cliente quiere comprar, le facilita los medios de pago. Si es algo complejo, lo escala a tu equipo.' }];
+    desc: 'Responde en segundos con la info correcta: precio, stock disponible, talles, colores y medios de pago.' },
+  { color: '#22d3ee', label: 'Cliente decide comprar', icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>,
+    desc: 'El cliente confirma la compra. Lizia le facilita el link de pago (Mercado Pago, transferencia) y confirma la orden.' },
+  { color: 'var(--neural-purple)', label: 'Lizia deriva el pedido', icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
+    desc: 'El pedido se registra automáticamente y se escala a tu equipo para preparar el envío. Todo sin intervención manual.' }];
 
 
   return (
@@ -24,16 +28,16 @@ function Solucion() {
           </h2>
         </div>
 
-        {/* Nodes flow */}
+        {/* Nodes flow — circuit */}
         <div className="nodes-flow" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', marginBottom: 48, gap: 0, margin: '0px 0px 78px', justifyContent: 'center' }}>
           {nodes.map((n, i) =>
           <React.Fragment key={i}>
               <div onClick={() => setExpanded(expanded === i ? null : i)}
             style={{
-              width: 110, textAlign: 'center', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12
+              width: 100, textAlign: 'center', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10
             }}>
                 <div style={{
-                width: 80, height: 80, borderRadius: '50%',
+                width: 70, height: 70, borderRadius: '50%',
                 background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)',
                 border: `1px solid color-mix(in srgb, ${n.color} 30%, transparent)`,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -41,12 +45,21 @@ function Solucion() {
                 boxShadow: expanded === i ? `0 0 30px color-mix(in srgb, ${n.color} 30%, transparent)` : 'none',
                 transform: expanded === i ? 'scale(1.1)' : 'scale(1)'
               }}>{n.icon}</div>
-                <p style={{ fontSize: 13, lineHeight: 1.4, color: "rgb(250, 250, 250)", fontWeight: "600" }}>{n.label}</p>
+                <p style={{ fontSize: 12, lineHeight: 1.3, color: "rgb(250, 250, 250)", fontWeight: "600", maxWidth: 100 }}>{n.label}</p>
               </div>
-              {i < 2 && <div className="connector hide-mobile" style={{ height: 3, opacity: 0.8, minWidth: 50, background: 'linear-gradient(90deg, var(--neural-cyan), var(--neural-purple), var(--neural-pink))', boxShadow: '0 0 12px rgba(34,211,238,0.4)' }}></div>}
-              {i < 2 && <div className="connector-v-mobile" style={{ display: 'none' }}></div>}
+              {i < 4 && <div className="connector hide-mobile" style={{ height: 3, opacity: 0.8, minWidth: 30, background: 'linear-gradient(90deg, var(--neural-cyan), var(--neural-purple), var(--neural-pink))', boxShadow: '0 0 12px rgba(34,211,238,0.4)' }}></div>}
+              {i < 4 && <div className="connector-v-mobile" style={{ display: 'none' }}></div>}
             </React.Fragment>
           )}
+        </div>
+        {/* Feedback loop arrow */}
+        <div className="hide-mobile" style={{ maxWidth: 700, margin: '-40px auto 32px', textAlign: 'center', position: 'relative' }}>
+          <svg width="100%" height="40" viewBox="0 0 700 40" preserveAspectRatio="none" fill="none">
+            <path d="M600 5 C650 5, 670 20, 650 35 L50 35 C30 35, 10 20, 50 5" stroke="url(#loopGrad)" strokeWidth="2" strokeDasharray="6 4" fill="none" opacity="0.5"/>
+            <defs><linearGradient id="loopGrad" x1="0" y1="0" x2="700" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="var(--neural-purple)"/><stop offset="1" stopColor="var(--neural-cyan)"/></linearGradient></defs>
+            <polygon points="55,0 45,5 55,10" fill="var(--neural-cyan)" opacity="0.6" transform="translate(-5,30)"/>
+          </svg>
+          <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 4 }}>El ciclo se repite con cada consulta</p>
         </div>
 
         {/* Expanded description */}

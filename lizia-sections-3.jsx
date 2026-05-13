@@ -81,13 +81,13 @@ Selecciona algunas de ellas.</span>
         </div>
         <div className="glass-card" style={{ maxWidth: 750, margin: '0 auto', padding: 'clamp(16px, 4vw, 36px)', display: 'flex', flexDirection: 'column', gap: 12, minHeight: 400 }}>
           {items.map((it, i) => <div key={i} className={`faq-item ${open === i ? 'open' : ''}`}
-          style={{ ...(open === i ? { background: 'rgba(255,255,255,0.02)' } : {}), textAlign: "center", borderWidth: "0.8px", width: '100%' }}>
-              <div className="faq-header" onClick={() => setOpen(open === i ? null : i)} style={{ alignItems: "center", padding: '18px clamp(14px, 3vw, 28px)', justifyContent: "space-between", width: '100%' }}>
-                <span style={{ fontWeight: 600, fontSize: 16 }}>{it.q}</span>
-                <span style={{ fontSize: 20, transition: 'transform 0.3s', transform: open === i ? 'rotate(45deg)' : 'rotate(0)', color: "rgb(252, 252, 252)", textAlign: "justify" }}>+</span>
+          style={{ ...(open === i ? { background: 'rgba(255,255,255,0.02)' } : {}), textAlign: "left", borderWidth: "0.8px", width: '100%' }}>
+              <div className="faq-header" onClick={() => setOpen(open === i ? null : i)} style={{ alignItems: "center", padding: '18px clamp(14px, 3vw, 28px)', justifyContent: "space-between", width: '100%', display: 'flex' }}>
+                <span style={{ fontWeight: 600, fontSize: 16, flex: 1, textAlign: 'left' }}>{it.q}</span>
+                <span style={{ fontSize: 20, transition: 'transform 0.3s', transform: open === i ? 'rotate(45deg)' : 'rotate(0)', color: "rgb(252, 252, 252)", flexShrink: 0, marginLeft: 12 }}>+</span>
               </div>
               <div className="faq-body">
-                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 15, lineHeight: 1.7 }}>{it.a}</p>
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 15, lineHeight: 1.7, textAlign: 'left', padding: '0 clamp(14px, 3vw, 28px)' }}>{it.a}</p>
               </div>
             </div>
           )}
@@ -132,11 +132,6 @@ function Footer() {
           <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'linear-gradient(135deg, var(--neural-cyan), var(--neural-purple))', display: 'inline-block' }}></span>
         </div>
         <p style={{ color: "rgb(255, 255, 255)", fontWeight: "500", fontSize: "14px", opacity: "3" }}>© 2025 Lizia. Automatización inteligente y Estrategia Digital para negocios.</p>
-        <div style={{ display: 'flex', gap: 24 }}>
-          {['Términos', 'Privacidad', 'Contacto'].map((l) =>
-          <a key={l} href="#" style={{ color: 'rgba(255,255,255,0.35)', textDecoration: 'none', fontSize: 13 }}>{l}</a>
-          )}
-        </div>
       </div>
     </footer>);
 
