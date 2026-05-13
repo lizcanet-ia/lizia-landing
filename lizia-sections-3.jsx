@@ -126,12 +126,12 @@ function CtaFinal() {
 function Footer() {
   return (
     <footer style={{ background: 'rgba(10,10,26,0.5)', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '32px 24px' }}>
-      <div className="footer-inner" style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
+      <div className="footer-inner" style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, textAlign: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontWeight: 800, fontSize: 18, color: '#fff' }}>Lizia</span>
           <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'linear-gradient(135deg, var(--neural-cyan), var(--neural-purple))', display: 'inline-block' }}></span>
         </div>
-        <p style={{ color: "rgb(255, 255, 255)", fontWeight: "500", fontSize: "14px", opacity: "3" }}>© 2025 Lizia. Automatización inteligente y Estrategia Digital para negocios.</p>
+        <p style={{ color: "rgb(255, 255, 255)", fontWeight: "500", fontSize: "14px" }}>© 2025 Lizia. Automatización inteligente y Estrategia Digital para negocios.</p>
       </div>
     </footer>);
 

@@ -18,7 +18,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   -webkit-text-size-adjust: 100%;
-  scroll-snap-type: y proximity;
+  /* scroll-snap removed */
 }
 
 body {
@@ -81,11 +81,11 @@ body {
 @keyframes cardReveal {
   from {
     opacity: 0;
-    transform: perspective(600px) rotateX(12deg) translateY(80px) scale(0.92);
+    transform: translateY(30px) scale(0.97);
   }
   to {
     opacity: 1;
-    transform: perspective(600px) rotateX(0deg) translateY(0) scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 .glass-card:hover {
@@ -153,11 +153,10 @@ body {
   flex-shrink: 0;
 }
 
-/* Section spacing + page-turn snap */
+/* Section spacing */
 .section {
   padding: 96px 24px;
   position: relative;
-  scroll-snap-align: start;
 }
 .container { max-width: 1280px; margin: 0 auto; }
 
@@ -168,17 +167,16 @@ body {
   gap: 24px;
 }
 
-/* Scroll animation — page-turn reveal (high intensity) */
+/* Scroll animation — smooth fade-in */
 .reveal {
   opacity: 0;
-  transform: perspective(800px) rotateX(8deg) translateY(100px) scale(0.96);
-  transform-origin: center bottom;
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible {
   opacity: 1;
-  transform: perspective(800px) rotateX(0deg) translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 /* Infinite slider */
@@ -197,7 +195,6 @@ body {
   overflow: hidden;
   position: relative;
   z-index: 20;
-  scroll-snap-align: start;
 }
 
 /* Logo Cloud — inner container */

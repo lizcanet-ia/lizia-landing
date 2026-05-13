@@ -53,7 +53,7 @@ function Solucion() {
           )}
         </div>
         {/* Feedback loop arrow */}
-        <div className="hide-mobile" style={{ maxWidth: 700, margin: '-40px auto 32px', textAlign: 'center', position: 'relative' }}>
+        <div style={{ maxWidth: 700, margin: '-20px auto 32px', textAlign: 'center', position: 'relative', width: '90%' }}>
           <svg width="100%" height="40" viewBox="0 0 700 40" preserveAspectRatio="none" fill="none">
             <path d="M600 5 C650 5, 670 20, 650 35 L50 35 C30 35, 10 20, 50 5" stroke="url(#loopGrad)" strokeWidth="2" strokeDasharray="6 4" fill="none" opacity="0.5"/>
             <defs><linearGradient id="loopGrad" x1="0" y1="0" x2="700" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="var(--neural-purple)"/><stop offset="1" stopColor="var(--neural-cyan)"/></linearGradient></defs>
