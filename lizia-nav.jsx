@@ -57,8 +57,19 @@ function Nav() {
             >{l.label}</a>
           ))}
           <a href="https://wa.me/5491165295937?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Lizia" target="_blank" rel="noopener" style={{
-            color: '#fff', textDecoration: 'none', fontSize: 14, fontWeight: 700,
-          }}>Contactanos</a>
+            textDecoration: 'none',
+          }}>
+            <button style={{
+              background: 'linear-gradient(135deg, var(--neural-cyan), var(--neural-purple))',
+              color: '#fff', border: 'none', borderRadius: 8,
+              padding: '10px 22px', fontSize: 14, fontWeight: 700,
+              cursor: 'pointer', transition: 'opacity 0.3s, transform 0.3s',
+              boxShadow: '0 0 16px rgba(34,211,238,0.3)',
+            }}
+            onMouseEnter={e => { e.target.style.opacity = '0.85'; e.target.style.transform = 'scale(1.03)'; }}
+            onMouseLeave={e => { e.target.style.opacity = '1'; e.target.style.transform = 'scale(1)'; }}
+            >Contactanos</button>
+          </a>
         </div>
 
         {/* Hamburger */}
@@ -89,8 +100,15 @@ function Nav() {
             >{l.label}</a>
           ))}
           <a href="https://wa.me/5491165295937?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Lizia" target="_blank" rel="noopener"
-            style={{ color: '#fff', textDecoration: 'none', fontSize: 16, fontWeight: 700, padding: '8px 0' }}
-          >Contactanos</a>
+            style={{ textDecoration: 'none', marginTop: 8 }}
+          >
+            <button style={{
+              background: 'linear-gradient(135deg, var(--neural-cyan), var(--neural-purple))',
+              color: '#fff', border: 'none', borderRadius: 8, width: '100%',
+              padding: '14px 22px', fontSize: 16, fontWeight: 700,
+              cursor: 'pointer', boxShadow: '0 0 16px rgba(34,211,238,0.3)',
+            }}>Contactanos</button>
+          </a>
         </div>
       )}
 

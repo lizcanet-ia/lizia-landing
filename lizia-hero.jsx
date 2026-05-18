@@ -40,8 +40,8 @@ function Hero() {
 Respondé consultas, cerrá ventas y gestioná pedidos.
 Sin que suene a robot.</p>
 
-        {/* CTA */}
-        <div className="hero-anim" style={{ animationDelay: '0.8s', marginTop: 8 }}>
+        {/* CTAs */}
+        <div className="hero-anim" style={{ animationDelay: '0.8s', marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center', alignItems: 'center' }}>
           <a href="#diagnostico" style={{ textDecoration: 'none' }}>
             <div className="btn-wrap">
               <button className="btn-gradient">
@@ -54,6 +54,20 @@ Sin que suene a robot.</p>
                 </span>
               </button>
             </div>
+          </a>
+          <a href="https://youtube.com/shorts/IY6Hi5Kbz0E" target="_blank" rel="noopener" style={{
+            textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10,
+            color: '#fff', fontSize: 16, fontWeight: 600,
+            padding: '14px 28px', borderRadius: 12,
+            border: '1px solid rgba(255,255,255,0.15)',
+            background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(8px)',
+            transition: 'border-color 0.3s, background 0.3s',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(34,211,238,0.4)'; e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; }}
+          onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Ver cómo funciona
           </a>
         </div>
 
