@@ -55,6 +55,7 @@ function App() {
       <Problema />
       <Diagnostico />
       <Solucion />
+      <Demo />
       <Casos />
       <Proceso />
       <CrmUpsell />

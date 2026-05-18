@@ -55,7 +55,7 @@ Sin que suene a robot.</p>
               </button>
             </div>
           </a>
-          <a href="https://youtube.com/shorts/IY6Hi5Kbz0E" target="_blank" rel="noopener" style={{
+          <a href="#demo" style={{
             textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10,
             color: '#fff', fontSize: 16, fontWeight: 600,
             padding: '14px 28px', borderRadius: 12,

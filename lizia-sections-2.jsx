@@ -209,6 +209,50 @@ function Proceso() {
 
 }
 
+/* ══════════════════ DEMO VIDEO ══════════════════ */
+function Demo() {
+  const ref = useReveal();
+  return (
+    <section id="demo" className="section">
+      <div className="container reveal" ref={ref}>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <SectionLabel text="Demo en vivo" />
+          <h2 style={{ fontSize: 'clamp(2.8rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.03em' }}>
+            <span className="grad-text section-title">Mirá a Lizia en acción</span>
+          </h2>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 16, marginTop: 16, maxWidth: 500, margin: '16px auto 0' }}>
+            Una conversación real por WhatsApp. Sin edición, sin trucos.
+          </p>
+        </div>
+        {/* Phone mockup */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{
+            width: 'min(320px, 85vw)', aspectRatio: '9/16',
+            borderRadius: 36, overflow: 'hidden', position: 'relative',
+            border: '4px solid rgba(255,255,255,0.1)',
+            boxShadow: '0 0 60px rgba(34,211,238,0.15), 0 20px 60px rgba(0,0,0,0.4)',
+            background: '#000',
+          }}>
+            {/* Notch */}
+            <div style={{
+              position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)',
+              width: 120, height: 28, background: '#000', borderRadius: '0 0 16px 16px', zIndex: 2,
+            }}></div>
+            <iframe
+              src="https://www.youtube.com/embed/IY6Hi5Kbz0E?autoplay=1&mute=1&loop=1&playlist=IY6Hi5Kbz0E&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title="Demo Lizia WhatsApp"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 window.Solucion = Solucion;
 window.Casos = Casos;
 window.Proceso = Proceso;
+window.Demo = Demo;
