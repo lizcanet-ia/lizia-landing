@@ -14,6 +14,7 @@ function Nav() {
     { label: 'Inicio', href: '#hero' },
     { label: 'Problema', href: '#problema' },
     { label: 'Solución', href: '#solucion' },
+    { label: 'Demo', href: '#demo' },
     { label: 'Casos de uso', href: '#casos' },
     { label: 'Preguntas', href: '#faq' },
     { label: 'Contacto', href: '#contacto' },
